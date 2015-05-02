@@ -1,25 +1,115 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5iT-Dg-duq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-Cj-SVu">
+                                <rect key="frame" x="-20" y="0.0" width="640" height="2"/>
+                                <color key="progressTintColor" red="0.0" green="0.4823529411764706" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90c-2T-Aey">
+                                <rect key="frame" x="0.0" y="492" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="A4M-WN-sDA">
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="S1M-Co-bwp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="xwF-Le-i4C"/>
+                                    <barButtonItem systemItem="fastForward" id="ZbI-m3-XAG">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="vdj-zp-PzP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7bB-Mb-Yas"/>
+                                    <barButtonItem title="Item" systemItem="pause" id="c5y-TD-rLv">
+                                        <connections>
+                                            <action selector="stopReload:" destination="BYZ-38-t0r" id="MTb-MO-jxl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hr9-Cj-SVu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="FEe-ef-KfA"/>
+                            <constraint firstItem="Hr9-Cj-SVu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NhV-ff-tCM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="90c-2T-Aey" secondAttribute="bottom" id="SKn-NW-63o"/>
+                            <constraint firstAttribute="trailing" secondItem="Hr9-Cj-SVu" secondAttribute="trailing" constant="-20" id="bBI-w5-Oan"/>
+                            <constraint firstAttribute="trailing" secondItem="90c-2T-Aey" secondAttribute="trailing" id="ftB-CB-TdR"/>
+                            <constraint firstItem="90c-2T-Aey" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="li7-97-BF7"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="0GL-aw-TWw">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="qAN-E1-pjB">
+                            <rect key="frame" x="16" y="-278" width="568" height="600"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wrQ-eG-NDo">
+                                    <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="go"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="W2a-py-kuq"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.054231295620000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="wrQ-eG-NDo" secondAttribute="trailing" id="2Hw-aV-Y2F"/>
+                                <constraint firstAttribute="bottom" secondItem="wrQ-eG-NDo" secondAttribute="bottom" id="UX5-9n-nrX"/>
+                                <constraint firstItem="wrQ-eG-NDo" firstAttribute="top" secondItem="qAN-E1-pjB" secondAttribute="top" id="ne8-rX-Yrc"/>
+                                <constraint firstItem="wrQ-eG-NDo" firstAttribute="leading" secondItem="qAN-E1-pjB" secondAttribute="leading" id="wWb-M1-enZ"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="A4M-WN-sDA" id="6zd-f4-Upd"/>
+                        <outlet property="barBackgroundView" destination="qAN-E1-pjB" id="eI5-H5-Fma"/>
+                        <outlet property="fowardButton" destination="ZbI-m3-XAG" id="SWz-CL-oLd"/>
+                        <outlet property="inputURLField" destination="wrQ-eG-NDo" id="qlw-We-gtO"/>
+                        <outlet property="progressView" destination="Hr9-Cj-SVu" id="L7f-ch-v4a"/>
+                        <outlet property="stopButton" destination="c5y-TD-rLv" id="hHO-3T-300"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="682" y="392"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WWI-Hg-JQg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5iT-Dg-duq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Lx-bx-Kag">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.054231295620000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3i1-nE-jns"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfk-PT-JjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="368"/>
         </scene>
     </scenes>
 </document>
